@@ -23,20 +23,23 @@ public class FortuneTeller extends JPanel implements Runnable, MouseListener {
 
     JFrame frame = new JFrame();
 
-    int frameWidth = 500;
-    int frameHeight = 400;
+    int frameWidth = 250
+    		;
+    int frameHeight = 250;
 
     FortuneTeller() throws Exception {
    	 // 1. Choose an image for your fortune teller and put it in your default package
+    
    	 fortuneTellerImage = ImageIO.read(getClass().getResource("fortune teller.png"));
    	 // 2. Adjust the frameWidth and frameHeight variables to fit your image nicely (doesn’t need a new line of code)
+   	 
    	 // 4. add a mouse listener to the frame
-
+   	 	frame.addMouseListener(this);
     }
 
     static void begin() {
    	 // 3. Welcome the user. Give them a hint for the secret location.
-
+    		JOptionPane.showMessageDialog(null, "Welcome, the secret button is around one of her 2 hands");
     }
 
     @Override
@@ -44,22 +47,64 @@ public class FortuneTeller extends JPanel implements Runnable, MouseListener {
    	 int mouseX = e.getX();
    	 int mouseY = e.getY();
    	 // 5. Print the mouseX variable
-
+ 	System.out.println(mouseY + " Y"              );
+   	 	System.out.println(mouseX + " X" );
    	 // 6. Add the mouseY variable to the previous line so that it prints out too (no new line)
+   	 	
    	 // 7. Adjust your secret location co-ordinates here:
-   	 int secretLocationX = 0;
-   	 int secretLocationY = 0;
+   	 	int secretLocationX = 58;
+   	 int secretLocationY = 168;
    	 /** If the mouse co-ordinates and secret location are close, we'll let them ask a question. */
    	 if (areClose(mouseX, secretLocationX) && areClose(mouseY, secretLocationY)) {
    		 // 8. Get the user to enter a question for the fortune teller
-
+JOptionPane.showInputDialog("ask me a question");
    		 // 9. Find a spooky sound and put it in your default package (freesound.org)
-   		 // AudioClip sound = JApplet.newAudioClip(getClass().getResource("creepy-noise.wav"));
-   		 // 10. Play the sound
-
+   		  AudioClip sound = JApplet.newAudioClip(getClass().getResource("creepy-noise.wav"));
+						
+   		 // 10. Play the sound	
+sound.play();
    		 // 11. Use the pause() method below to wait until your music has finished
-
+pause (5);
    		 // 12. Insert your completed Magic 8 ball recipe (http://bit.ly/Zdrf6d) here
+//Copyright Wintriss Technical Schools 2013
+
+
+
+
+	// 2. Make a variable that will hold a random number and put a random number into this variable using "
+
+		int number =     new Random().nextInt(4);
+	// 3. Print out this variable
+System.out.println(number);
+	// 4. Get the user to enter a question for the 8 ball
+
+	// 5. If the random number is 0
+if(number==0) {
+	JOptionPane.showMessageDialog(null, "Yes");
+}
+	// -- tell the user "Yes"
+
+	// 6. If the random number is 1
+if(number==1) {
+	JOptionPane.showMessageDialog(null, "no");
+}
+	// -- tell the user "No"
+
+	// 7. If the random number is 2
+if(number==2) {
+	JOptionPane.showMessageDialog(null, "Mabye you should ask google");
+}
+	// -- tell the user "Maybe you should ask Google?"
+
+	// 8. If the random number is 3
+if(number==3) {
+	JOptionPane.showMessageDialog(null, "definetly not");
+}
+	// -- write your own answer
+
+
+
+
 
    	 }
 

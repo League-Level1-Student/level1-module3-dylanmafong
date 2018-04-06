@@ -22,6 +22,7 @@ public class SimonSays extends KeyAdapter {
  
  // Complete steps 1 - 7 before you test
  // 1. Make a JFrame variable 
+	JFrame J = new JFrame();
  
  	HashMap<Integer,String> images = new HashMap<Integer, String>();
  	private int imageIndex;
@@ -29,12 +30,15 @@ public class SimonSays extends KeyAdapter {
  	private int simonSays = 0;
  	Date timeAtStart;
  	private  void makeAlbum() {
- // 2. add 4 images which match keyboard keys like this: images.put(new Integer(KeyEvent.VK_UP), "image.jpg");
-  	
+ // 2. add 4 images which match keyboard keys like this: 
+  	images.put(new Integer(KeyEvent.VK_LEFT), "left arrow key.png");
+	images.put(new Integer(KeyEvent.VK_UP), "Up arrow.png");
+	images.put(new Integer(KeyEvent.VK_DOWN), "down arrow key.jpg");
+	images.put(new Integer(KeyEvent.VK_RIGHT), "right arrow key.png");
  // 3. Tell the user to "Press the matching key when 'Simon says' otherwise press a different key"
- 
+ JOptionPane.showMessageDialog(null, "Press the matching key when Simon says otherwise press a different key");
  // 4. call the method to show an image
-
+showImage();
  	}
 	public void keyPressed(KeyEvent e) {
     	int keyCode = e.getKeyCode();
@@ -55,17 +59,26 @@ public class SimonSays extends KeyAdapter {
 	}
 	private void showImage() {
     	//5. initialize your frame to a new JFrame()
-	 
+	J = new JFrame();
     	//6. set the frame to visible
-	
-  	 //frame.add(getNextRandomImage()); //7. rename to the name of your frame
+	J.setVisible(true);
+  	J .add(getNextRandomImage()); //7. rename to the name of your frame
     	
     	// 8. set the size of the frame 
-     	
+     	J.setSize(800, 448);
     	// 9. add a key listener to the frame
-	
+	J.addKeyListener(this);
    	 //10. Use the speak method to either say "Simon says press this key" or "Press this key"
     	//Hint: use the simonSays int and a random number
+	Random R = new Random();
+	simonSays= R.nextInt(2);
+			if(simonSays==1) {
+				speak("Simon says press this key");
+			}else {
+				speak("Press this key");
+			}
+			
+			
 	}
 	private Component getNextRandomImage() {
     	this.imageIndex = new Random().nextInt(4) + 37;
