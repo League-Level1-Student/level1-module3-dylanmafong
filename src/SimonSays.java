@@ -111,8 +111,7 @@ showImage();
 	 new SimonSays().makeAlbum();
 	}
 }
-JOptionPane.showmessageDialog(null, "Your score is"+points);
-}}
+
 /* 
 * 20. add a timer
 * ~~~ where the code starts running ~~~
