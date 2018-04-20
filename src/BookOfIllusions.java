@@ -10,6 +10,7 @@ import java.net.URL;
 
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
+import javax.swing.JFrame;
 import javax.swing.JLabel;
  
 /** We’re going to make a slideshow of cool optical illusions. When the user clicks on an illusion, a new one will be loaded. **/
@@ -27,14 +28,19 @@ public class BookOfIllusions extends MouseAdapter {
 	}
 
 	// 1. Make a JFrame variable and initialize it using "new JFrame()"
-
+JFrame a = new JFrame();
 	private void createBook() {
-		// 2. make the frame visible
+		// 2. make the frame visible\
+		a.isVisible();
 		// 3. set the size of the frame
-		// 4. find 2 images and save them to your project’s default package
-		// 5. make a variable to hold the location of your image. e.g. "illusion.jpg"
+		a.setSize(12,12);
+		// 4. find 2 images and save them to your project’s default packag
+		// 5. make a variable to hold the location of your image. e.g. "illusion.jpg
+		String a = ("IMaGe 2.png");
 		// 6. create a variable of type "JLabel" but don’t initialize it yet
+		JLabel b  = new JLabel();
 		// 7. use the "loadImage..." methods below to initialize your JLabel
+		b = loadImageFromComputer("IMaGe");
 		// 8. add your JLabel to the frame
 		// 9. call the pack() method on the frame
 		// 10. add a mouse listener to your frame (hint: use *this*)
