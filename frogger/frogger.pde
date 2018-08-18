@@ -34,9 +34,49 @@ car8.goLeft();
 car9.display();
 car9.goRight();
 if(intersects(car1)){
-  
-  
-}
+  System.out.print("Game over");
+  y=y+500;
+ }
+ if(intersects(car2)){
+  System.out.print("Game over");
+  y=y+400;
+ }
+
+if(intersects(car3)){
+  System.out.print("Game over");
+  y=y+350;
+ }
+
+if(intersects(car4)){
+  System.out.print("Game over");
+  y=y+300;
+ }
+
+if(intersects(car5)){
+  System.out.print("Game over");
+  y=y+250;
+ }
+
+if(intersects(car6)){
+  System.out.print("Game over");
+  y=y+200;
+ }
+
+if(intersects(car7)){
+  System.out.print("Game over");
+  y=y+150;
+ }
+
+if(intersects(car8)){
+  System.out.print("Game over");
+  y=y+100;
+ }
+
+if(intersects(car9)){
+  System.out.print("Game over");
+  y=y+500;
+ }
+
 
 
 
@@ -119,6 +159,7 @@ int getY(){
 boolean intersects(Car car) {
       if ((y > car.getY() && y < car.getY()+50) && (x > car.getX() && x < car.getX()+car.getSize()))
       {
+
              return true;
       }
       else 
